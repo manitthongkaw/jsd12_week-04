@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business with HTML, TailwindCSS and responsive design - 14_Manit (Arm/อาม)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Charmonman:wght@400;700&display=swap">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    /* Color:
+      primay    - amber-500
+      secondary - slate-700
+    */
+    .font-primary   {font-family:'Charmonman', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';}
+    .font-secondary {font-family:'Kanit', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';}
+    :is(.hero-inner, .partner-inner)       {position:relative;}
+    :is(.hero-inner, .partner-inner) > *   {position:relative; z-index:1;}
+    :is(.hero-inner, .partner-inner):after {content:''; display:block; position:absolute; top:0; left:0; width:100%; height:100%;
+                                            background-color:rgba(0,0,0,0.2);
+                                            transition:all 0.15s cubic-bezier(0.4, 0, 0.2, 1);}
+    :is(.hero-inner, .partner-inner):hover:after {background-color:rgba(0,0,0,0.4);}
+  </style>
+</head>
+<body class="font-secondary text-gray-500 bg-slate-50">
+  <header class="fixed z-10 w-full px-5 py-10">
+    <nav class="max-w-5xl border border-slate-100 hover:border-slate-200 rounded-2xl bg-white mx-auto hover:shadow-[0_0_40px_rgba(0,0,0,0.1)] transition-all">
+      <ul class="flex justify-evenly min-[460px]:justify-between items-center gap-2 p-2">
+        <li class="min-[460px]:flex-1"><a class="flex items-center gap-1 w-fit font-primary text-3xl font-bold text-amber-500 hover:text-white fill-amber-500 hover:fill-white hover:text-shadow-[0_1px_4px_rgba(0,0,0,0.3)] px-4 py-2 min-[460px]:py-0.5 rounded-lg hover:bg-amber-500 transition-all" href="#home">
+          <svg class="block min-[460px]:hidden" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -960 960 960"><path d="M480-427ZM240-120q-50 0-85-35t-35-85v-240q0-24 9-46t26-39l240-240q17-18 39.5-26.5T480-840q23 0 45 8.5t40 26.5l240 240q17 17 26 39t9 46v240q0 50-35 85t-85 35H240Zm0-80h480q17 0 28.5-11.5T760-240v-240q0-8-3-15t-9-13L595-662l-59 58 144 144v180H280v-180l258-258-30-30q-8-8-15.5-10t-12.5-2q-5 0-12.5 2T452-748L212-508q-6 6-9 13t-3 15v240q0 17 11.5 28.5T240-200Zm120-160h240v-67L480-547 360-427v67Z"/></svg>
+          <span class="hidden min-[460px]:block">ชาเย็น...เย็นชา</span></a></li>
+        <li><a class="flex items-center gap-1 px-4 py-2 rounded-lg hover:text-white fill-slate-600 hover:fill-white hover:bg-amber-500 transition-all" href="#product">
+          <svg class="block sm:hidden" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -960 960 960"><path d="M444-600q-55 0-108 15.5T238-538l42 378h400l44-400h-28q-38 0-69-5.5T542-587q-23-7-48-10t-50-3Zm-216-25q51-27 105.5-41T445-680q30 0 59.5 4t58.5 12q50 14 76.5 19t56.5 5h37l17-160H210l18 175Zm51 545q-31 0-53.5-20T200-151l-80-729h720l-80 729q-3 31-25.5 51T681-80H279Zm165-80h236-400 164Z"/></svg>
+          <span class="hidden sm:block">ผลิตภัณฑ์</span></a></li>
+        <li><a class="flex items-center gap-1 px-4 py-2 rounded-lg hover:text-white fill-slate-600 hover:fill-white hover:bg-amber-500 transition-all" href="#about">
+          <svg class="block sm:hidden" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -960 960 960"><path d="M381-481q-41-41-41-99t41-99q41-41 99-41t99 41q41 41 41 99t-41 99q-41 41-99 41t-99-41Zm141.5-56.5Q540-555 540-580t-17.5-42.5Q505-640 480-640t-42.5 17.5Q420-605 420-580t17.5 42.5Q455-520 480-520t42.5-17.5ZM480-60 120-280v-400l360-220 360 220v400L480-60Zm0-93 147-91q-34-18-71.5-27t-75.5-9q-38 0-75.5 9T333-244l147 91ZM256-291q50-34 107-51.5T480-360q60 0 117 17.5T704-291l56-33v-311L480-806 200-635v311l56 33Zm224-189Z"/></svg>
+          <span class="hidden sm:block">เกี่ยวกับเรา</span></a></li>
+        <li><a class="flex items-center gap-1 px-4 py-2 rounded-lg hover:text-white fill-slate-600 hover:fill-white hover:bg-amber-500 transition-all" href="#partner">
+          <svg class="block sm:hidden" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 -960 960 960"><path d="M475-160q4 0 8-2t6-4l328-328q12-12 17.5-27t5.5-30q0-16-5.5-30.5T817-607L647-777q-11-12-25.5-17.5T591-800q-15 0-30 5.5T534-777l-11 11 74 75q15 14 22 32t7 38q0 42-28.5 70.5T527-522q-20 0-38.5-7T456-550l-75-74-175 175q-3 3-4.5 6.5T200-435q0 8 6 14.5t14 6.5q4 0 8-2t6-4l136-136 56 56-135 136q-3 3-4.5 6.5T285-350q0 8 6 14t14 6q4 0 8-2t6-4l136-135 56 56-135 136q-3 2-4.5 6t-1.5 8q0 8 6 14t14 6q4 0 7.5-1.5t6.5-4.5l136-135 56 56-136 136q-3 3-4.5 6.5T454-180q0 8 6.5 14t14.5 6Zm-1 80q-37 0-65.5-24.5T375-166q-34-5-57-28t-28-57q-34-5-56.5-28.5T206-336q-38-5-62-33t-24-66q0-20 7.5-38.5T149-506l232-231 131 131q2 3 6 4.5t8 1.5q9 0 15-5.5t6-14.5q0-4-1.5-8t-4.5-6L398-777q-11-12-25.5-17.5T342-800q-15 0-30 5.5T285-777L144-635q-9 9-15 21t-8 24q-2 12 0 24.5t8 23.5l-58 58q-17-23-25-50.5T40-590q2-28 14-54.5T87-692l141-141q24-23 53.5-35t60.5-12q31 0 60.5 12t52.5 35l11 11 11-11q24-23 53.5-35t60.5-12q31 0 60.5 12t52.5 35l169 169q23 23 35 53t12 61q0 31-12 60.5T873-437L545-110q-14 14-32.5 22T474-80Zm-99-560Z"/></svg>
+          <span class="hidden sm:block">ร่วมธุรกิจกับเรา</span></a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="home" class="p-5 pt-[138px]">
+    <section id="hero" class="max-w-5xl p-2 border border-slate-100 hover:border-slate-200 rounded-2xl bg-white mx-auto transition-all">
+      <div class="hero-inner flex flex-col min-[480px]:items-center overflow-hidden text-white px-5 py-20 rounded-lg bg-slate-200 bg-[url(./images/hero.jpg)] bg-no-repeat bg-center bg-cover">
+        <h3 class="font-primary text-5xl font-bold text-balance text-shadow-[0_1px_4px_rgba(0,0,0,0.3)]">สัมผัสสุนทรียภาพ... แห่งชาไทยต้นตำรับ</h3>
+        <p class="min-w-3/4 sm:text-center text-xl font-medium text-balance mt-5">พิถีพิถันในทุกขั้นตอน ตั้งแต่การคัดเลือกใบชาชั้นเลิศ สู่การชงอย่างใส่ใจ เพื่อรสชาติที่กลมกล่อม หอมละมุน ในแบบฉบับที่ไม่เหมือนใคร</p>
+        <p class="mt-10"><a class="block w-fit text-lg text-amber-500 hover:text-white px-4 py-1.5 rounded-lg bg-white hover:bg-amber-500 transition-all" href="#product">ค้นพบความอร่อยของเรา</a></p>
+      </div>
+    </section>
+    <section id="product" class="max-w-5xl mx-auto mt-10 transition-all">
+      <ul class="product__list flex flex-wrap gap-5">
+        <li class="product__item group sm:basis-[calc(50%-(theme(gap.5)/2))] md:basis-[calc((100%-2*theme(spacing.5))/3)] p-2 border border-slate-100 hover:border-slate-200 rounded-2xl bg-white transition-all">
+          <img class="w-full aspect-square rounded-lg bg-slate-200" src="./images/product-thai-tea.jpg" alt="ชาไทย">
+          <div class="product___item--content py-2">
+            <h3 class="text-xl text-gray-600 group-hover:text-amber-500 transition-all">ชาไทย</h3>
+            <p>หอมละมุนดับร้อนช่วงสงกรานต์</p>
+          </div>
+        </li>
+        <li class="product__item group sm:basis-[calc(50%-(theme(gap.5)/2))] md:basis-[calc((100%-2*theme(spacing.5))/3)] p-2 border border-slate-100 hover:border-slate-200 rounded-2xl bg-white transition-all">
+          <img class="w-full aspect-square rounded-lg bg-slate-200" src="./images/product-thai-tea-smoothie.jpg" alt="ชาไทย (ปั่น)">
+          <div class="product___item--content py-2">
+            <h3 class="text-xl text-gray-600 group-hover:text-amber-500 transition-all">ชาไทย (ปั่น)</h3>
+            <p>เย็นฉ่ำเนื้อเนียนคลายร้อนรับสงกรานต์</p>
+          </div>
+        </li>
+        <li class="product__item group sm:basis-[calc(50%-(theme(gap.5)/2))] md:basis-[calc((100%-2*theme(spacing.5))/3)] p-2 border border-slate-100 hover:border-slate-200 rounded-2xl bg-white transition-all">
+          <img class="w-full aspect-square rounded-lg bg-slate-200" src="./images/product-milk-tea.jpg" alt="ชานมไข่มุข">
+          <div class="product___item--content py-2">
+            <h3 class="text-xl text-gray-600 group-hover:text-amber-500 transition-all">ชานมไข่มุข</h3>
+            <p>หอมหวานเคี้ยวเพลิน สดชื่นรับปีใหม่ไทย</p>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <section id="about" class="flex flex-col md:flex-row items-center gap-4 md:gap-5 lg:gap-10 max-w-5xl mx-auto mt-10">
+      <div class="about__image flex-1 p-2 border border-slate-100 hover:border-slate-200 rounded-2xl bg-white transition-all">
+        <img class="md:hidden w-full rounded-lg" src="./images/about-mobile.jpg" alt="เกี่ยวกับเรา">
+        <img class="hidden md:block w-full rounded-lg" src="./images/about.jpg" alt="เกี่ยวกับเรา">
+      </div>
+      <div class="about__content flex-1">
+        <h2 class="font-primary text-3xl font-bold pt-4">เกี่ยวกับเรา</h2>
+        <p class="indent-5 mt-2">เราเริ่มต้นจากความหลงใหลในเสน่ห์อันเป็นเอกลักษณ์ของ "ชาไทย" ด้วยความมุ่งมั่นที่จะส่งมอบรสชาติที่แท้จริงและได้มาตรฐาน เราจึงใส่ใจอย่างพิถีพิถันตั้งแต่การคัดสรรใบชาคุณภาพเยี่ยมจากแหล่งปลูกชั้นนำ นำมาผ่านกรรมวิธีการชงและการผสมผสานด้วยสูตรเฉพาะที่พัฒนาขึ้นอย่างตั้งใจ เพื่อดึงเอากลิ่นหอมละมุนและรสชาติที่กลมกล่อมเข้มข้นในทุกแก้ว เป้าหมายของเราคือการสร้างสรรค์เครื่องดื่มที่ไม่เพียงแต่ดับกระหาย แต่ยังมอบประสบการณ์ความอร่อยที่น่าประทับใจและทรงคุณค่าตามแบบฉบับดั้งเดิม</p>
+        <p class="indent-5 mt-2">ด้วยวิสัยทัศน์ที่ต้องการยกระดับมาตรฐานธุรกิจเครื่องดื่มให้เติบโตอย่างยั่งยืน เราจึงให้ความสำคัญกับการสร้างรากฐานที่มั่นคงและการบริหารงานอย่างเป็นระบบ เราพร้อมที่จะส่งต่อความสำเร็จและองค์ความรู้ทั้งหมดให้กับพันธมิตรทางธุรกิจ ด้วยความมุ่งหวังที่จะสร้างเครือข่ายที่แข็งแกร่งและเติบโตไปพร้อมกัน ภายใต้การดูแลจากทีมงานมืออาชีพที่พร้อมให้คำปรึกษาและสนับสนุนในทุกก้าว เพื่อให้คุณมั่นใจได้ว่าการร่วมเป็นส่วนหนึ่งกับเรา คือการเลือกลงทุนในธุรกิจที่มีศักยภาพและพร้อมก้าวสู่อนาคตอย่างมั่นคง</p>
+      </div>
+    </section>
+    <section id="partner" class="max-w-5xl p-2 border border-slate-100 hover:border-slate-200 rounded-2xl bg-white mx-auto mt-10 transition-all">
+      <div class="partner-inner flex flex-col min-[480px]:items-center overflow-hidden text-white px-5 py-20 rounded-lg bg-slate-200 bg-[url(./images/partner.jpg)] bg-no-repeat bg-center bg-cover">
+        <h3 class="font-primary text-5xl font-bold text-balance text-shadow-[0_1px_4px_rgba(0,0,0,0.3)]">ร่วมธุรกิจกับเรา</h3>
+        <p class="text-xl font-medium text-balance mt-5">สืบสานตำนานชาไทย สู่ความสำเร็จร่วมกัน</p>
+        <p class="mt-10"><a class="block w-fit text-lg text-amber-500 hover:text-white px-4 py-1.5 rounded-lg bg-white hover:bg-amber-500 transition-all" href="#partner-more">สอบถามข้อมูลเพิ่มเติม</a></p>
+      </div>
+    </section>
+  </main>
+  <footer class="max-w-5xl flex gap-5 justify-between text-xs text-gray-400 py-5 mx-auto">
+    <p>© สงวนสิทธิ์ พ.ศ. 2569 โดย <span class="text-gray-500">14_Manit (Arm/อาม)</span></p>
+    <nav>
+      <ul class="flex gap-5">
+        <li><a class="hover:text-gray-600 hover:underline hover:decoration-amber-500 underline-offset-4 transition-all" href="#privacy-policy">ประกาศความเป็นส่วนตัว</a></li>
+        <li><a class="hover:text-gray-600 hover:underline hover:decoration-amber-500 underline-offset-4 transition-all" href="#cookie-policy">นโยบายคุกกี้</a></li>
+      </ul>
+    </nav>
+  </footer>
+</body>
+</html>
