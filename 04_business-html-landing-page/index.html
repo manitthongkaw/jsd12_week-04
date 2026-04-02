@@ -46,7 +46,7 @@
   </header>
   <main id="home" class="p-5 pt-[138px]">
     <section id="hero" class="max-w-5xl p-2 border border-slate-100 hover:border-slate-200 rounded-2xl bg-white mx-auto transition-all">
-      <div class="hero-inner flex flex-col min-[480px]:items-center overflow-hidden text-white px-5 py-20 rounded-lg bg-slate-200 bg-[url(./images/hero.avif)] bg-no-repeat bg-center bg-cover">
+      <div class="hero-inner flex flex-col min-[480px]:items-center overflow-hidden text-white px-5 py-20 rounded-lg bg-slate-200 bg-[url(./images/hero-xs.avif)] min-[360px]:bg-[url(./images/hero.avif)] bg-no-repeat bg-center bg-cover">
         <h1 class="font-primary text-4xl min-[480px]:text-5xl leading-tight font-bold text-balance min-[480px]:text-center text-shadow-[0_1px_4px_rgba(0,0,0,0.3)]">สัมผัสสุนทรียภาพ... แห่งชาไทยต้นตำรับ</h1>
         <p class="min-w-3/4 min-[480px]:text-center text-xl font-medium text-balance mt-5">พิถีพิถันในทุกขั้นตอน ตั้งแต่การคัดเลือกใบชาชั้นเลิศ สู่การชงอย่างใส่ใจ เพื่อรสชาติที่กลมกล่อม หอมละมุน ในแบบฉบับที่ไม่เหมือนใคร</p>
         <p class="mt-10"><a class="block w-fit text-lg text-amber-500 hover:text-white px-4 py-1.5 rounded-lg bg-white hover:bg-amber-500 transition-all" href="#product">ค้นพบความอร่อยของเรา</a></p>
@@ -55,21 +55,24 @@
     <section id="product" class="max-w-5xl mx-auto mt-10 transition-all">
       <ul class="product__list flex flex-wrap gap-5">
         <li class="product__item group sm:basis-[calc(50%-(theme(gap.5)/2))] md:basis-[calc((100%-2*theme(spacing.5))/3)] p-2 border border-slate-100 hover:border-slate-200 rounded-2xl bg-white transition-all">
-          <img class="w-full aspect-square rounded-lg bg-slate-200" src="./images/product-thai-tea.avif" alt="ชาไทย">
+          <img class="block min-[360px]:hidden w-full aspect-square rounded-lg bg-slate-200" src="./images/product-thai-tea-xs.avif" alt="ชาไทย">
+          <img class="hidden min-[360px]:block w-full aspect-square rounded-lg bg-slate-200" src="./images/product-thai-tea.avif" alt="ชาไทย">
           <div class="product___item--content py-2">
             <h2 class="text-xl text-gray-600 group-hover:text-amber-500 transition-all">ชาไทย</h2>
             <p>หอมละมุนดับร้อนช่วงสงกรานต์</p>
           </div>
         </li>
         <li class="product__item group sm:basis-[calc(50%-(theme(gap.5)/2))] md:basis-[calc((100%-2*theme(spacing.5))/3)] p-2 border border-slate-100 hover:border-slate-200 rounded-2xl bg-white transition-all">
-          <img class="w-full aspect-square rounded-lg bg-slate-200" src="./images/product-thai-tea-smoothie.avif" alt="ชาไทย (ปั่น)">
+          <img class="block min-[360px]:hidden w-full aspect-square rounded-lg bg-slate-200" src="./images/product-thai-tea-smoothie-xs.avif" alt="ชาไทย (ปั่น)">
+          <img class="hidden min-[360px]:block w-full aspect-square rounded-lg bg-slate-200" src="./images/product-thai-tea-smoothie.avif" alt="ชาไทย (ปั่น)">
           <div class="product___item--content py-2">
             <h3 class="text-xl text-gray-600 group-hover:text-amber-500 transition-all">ชาไทย (ปั่น)</h3>
             <p>เย็นฉ่ำเนื้อเนียนคลายร้อนรับสงกรานต์</p>
           </div>
         </li>
         <li class="product__item group sm:basis-[calc(50%-(theme(gap.5)/2))] md:basis-[calc((100%-2*theme(spacing.5))/3)] p-2 border border-slate-100 hover:border-slate-200 rounded-2xl bg-white transition-all">
-          <img class="w-full aspect-square rounded-lg bg-slate-200" src="./images/product-milk-tea.avif" alt="ชานมไข่มุข">
+          <img class="block min-[360px]:hidden w-full aspect-square rounded-lg bg-slate-200" src="./images/product-milk-tea-xs.avif" alt="ชานมไข่มุข">
+          <img class="hidden min-[360px]:block w-full aspect-square rounded-lg bg-slate-200" src="./images/product-milk-tea.avif" alt="ชานมไข่มุข">
           <div class="product___item--content py-2">
             <h3 class="text-xl text-gray-600 group-hover:text-amber-500 transition-all">ชานมไข่มุข</h3>
             <p>หอมหวานเคี้ยวเพลิน สดชื่นรับปีใหม่ไทย</p>
@@ -79,7 +82,8 @@
     </section>
     <section id="about" class="flex flex-col md:flex-row items-center gap-4 md:gap-5 lg:gap-10 max-w-5xl mx-auto mt-10">
       <div class="about__image flex-1 p-2 border border-slate-100 hover:border-slate-200 rounded-2xl bg-white transition-all">
-        <img class="md:hidden w-full rounded-lg" src="./images/about-mobile.avif" alt="เกี่ยวกับเรา">
+        <img class="block min-[360px]:hidden w-full rounded-lg" src="./images/about-xs.avif" alt="เกี่ยวกับเรา">
+        <img class="hidden min-[360px]:block md:hidden w-full rounded-lg" src="./images/about-mobile.avif" alt="เกี่ยวกับเรา">
         <img class="hidden md:block w-full rounded-lg" src="./images/about.avif" alt="เกี่ยวกับเรา">
       </div>
       <div class="about__content flex-1">
@@ -89,7 +93,7 @@
       </div>
     </section>
     <section id="partner" class="max-w-5xl p-2 border border-slate-100 hover:border-slate-200 rounded-2xl bg-white mx-auto mt-10 transition-all">
-      <div class="partner-inner flex flex-col min-[480px]:items-center overflow-hidden text-white px-5 py-20 rounded-lg bg-slate-200 bg-[url(./images/partner.avif)] bg-no-repeat bg-center bg-cover">
+      <div class="partner-inner flex flex-col min-[480px]:items-center overflow-hidden text-white px-5 py-20 rounded-lg bg-slate-200 bg-[url(./images/partner-xs.avif)] min-[360px]:bg-[url(./images/partner.avif)] bg-no-repeat bg-center bg-cover">
         <h3 class="font-primary text-4xl min-[480px]:text-5xl font-bold text-balance text-shadow-[0_1px_4px_rgba(0,0,0,0.3)]">ร่วมธุรกิจกับเรา</h3>
         <p class="text-xl font-medium text-balance mt-5">สืบสานตำนานชาไทย สู่ความสำเร็จร่วมกัน</p>
         <p class="mt-10"><a class="block w-fit text-lg text-amber-500 hover:text-white px-4 py-1.5 rounded-lg bg-white hover:bg-amber-500 transition-all" href="#partner-more">สอบถามข้อมูลเพิ่มเติม</a></p>
